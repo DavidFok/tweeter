@@ -32,13 +32,17 @@ textarea {
   line-height: 1.5em;
 }
 
-[type="submit"] {
-  font-size: 0.6em;
+.tooLong {
+  padding-left: 155px;
+  font-size: 0.4em;
+}
+
+#submit {
+  font-size: 0.75em;
 }
 
 .counter {
-  position: relative;
-  left: 250px;
+  float: right;
   font-size: xx-small;
-  padding-right: 5px;
+  padding: 12px 5px 0 0;
 }

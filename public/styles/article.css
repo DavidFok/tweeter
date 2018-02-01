@@ -11,6 +11,7 @@ article {
   background-color: white;
   opacity: 0.5;
   z-index: 4;
+  height: auto;
 }
 article:hover {
   opacity: 1;
@@ -24,7 +25,6 @@ article > header {
   height: 60px;
   border-radius: 7px 7px 0 0;
   background-color: rgb(230,230,230);
-  overflow: auto;
   width: 100%
   z-index: 2;
 }
@@ -55,13 +55,18 @@ article > header > h2 {
 
 article > div {
   margin: 20px 15px 20px 15px;
+  height: auto;
 }
 
 article > div > p {
+  /*max-width: 331px;*/
   font-size: .8em;
   font-weight: lighter;
   display: table-cell;
   vertical-align: middle;
+  word-break: break-word;
+/*  word-wrap: break-word;
+  overflow: scroll;*/
 }
 
 article > footer {

@@ -57,7 +57,7 @@ $(function(){
   function renderTweets (tweets) {
     for (let obj of tweets) {
       let HTMLtweet = createTweetElement(obj)
-      $('#tweet-container').append(HTMLtweet);
+      $('#tweet-container').prepend(HTMLtweet);
     }
   }
 
@@ -72,7 +72,7 @@ $(function(){
 
     //Content div
     const content = $('<div>');
-    $(`<p>${tweetData.content.text}</p>`).addClass("content").appendTo(content);
+    $('<p>').text(tweetData.content.text).addClass("content").appendTo(content);
 
     // Date Calculator
     const today = new Date();
@@ -94,26 +94,42 @@ $(function(){
   }
 
   // Ajax Management of Tweet post
-  var $form = $('form');
-  $form.on('submit', function (event) {
+  $('form').on('submit', function (event) {
     event.preventDefault();
-    const submitTweet = $('textarea').serialize();
-    if (submitTweet.length > 140) {
-
+    const textarea = $('textarea');
+    if (textarea.val().length > 140) {
+      const tooLong = $('<span>').text('Your tweet is too long!').addClass('tooLong');
+      $('section').first().effect("shake");
+      $('input').after(tooLong);
+    } else if (textarea.val() === "") {
+      textarea.attr('placeholder', 'Write your tweet here');
+    } else {
+      $.post('/tweets', textarea.serialize()).done(function() {
+        // console.log(res);
+        loadTweets();
+        $('textarea').val('');
+      })
     }
-    $.post('/tweets', submitTweet).done(function() {
-      // renderTweets() add sth here
-    })
-    console.log($.ajax());
+  });
+  // reset the <textarea>
+  $('textarea').on('keypress', () => {
+    $('textarea').attr('placeholder', 'What are you humming about?');
+    });
+  $('textarea').on('focus', () => {
+    $('.tooLong').remove();
   });
 
-  function loadTweets () {
-    $.get('/tweets').done(function(receivedTweets) {
-      renderTweets(receivedTweets);
-    });
-  }
 
+  function loadTweets () {
+    $.get('/tweets').done(renderTweets);
+  }
   loadTweets();
+
+  // Compose button reveal Tweet Form
+  $('button').on('click', () => {
+    $('h2').parent().slideToggle(300);
+    $('textarea').focus().select()
+  });
 });
 
 
