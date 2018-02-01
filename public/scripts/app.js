@@ -7,53 +7,6 @@
  // Test / driver code (temporary). Eventually will get this from the server.
 $(function(){
 
-  const data = [
-    {
-      "user": {
-        "name": "Newton",
-        "avatars": {
-          "small":   "https://vanillicon.com/788e533873e80d2002fa14e1412b4188_50.png",
-          "regular": "https://vanillicon.com/788e533873e80d2002fa14e1412b4188.png",
-          "large":   "https://vanillicon.com/788e533873e80d2002fa14e1412b4188_200.png"
-        },
-        "handle": "@SirIsaac"
-      },
-      "content": {
-        "text": "If I have seen further it is by standing on the shoulders of giants"
-      },
-      "created_at": 1461116232227
-    },
-    {
-      "user": {
-        "name": "Descartes",
-        "avatars": {
-          "small":   "https://vanillicon.com/7b89b0d8280b93e2ba68841436c0bebc_50.png",
-          "regular": "https://vanillicon.com/7b89b0d8280b93e2ba68841436c0bebc.png",
-          "large":   "https://vanillicon.com/7b89b0d8280b93e2ba68841436c0bebc_200.png"
-        },
-        "handle": "@rd" },
-      "content": {
-        "text": "Je pense , donc je suis"
-      },
-      "created_at": 1461113959088
-    },
-    {
-      "user": {
-        "name": "Johann von Goethe",
-        "avatars": {
-          "small":   "https://vanillicon.com/d55cf8e18b47d4baaf60c006a0de39e1_50.png",
-          "regular": "https://vanillicon.com/d55cf8e18b47d4baaf60c006a0de39e1.png",
-          "large":   "https://vanillicon.com/d55cf8e18b47d4baaf60c006a0de39e1_200.png"
-        },
-        "handle": "@johann49"
-      },
-      "content": {
-        "text": "Es ist nichts schrecklicher als eine tätige Unwissenheit."
-      },
-      "created_at": 1461113796368
-    }
-  ];
-
   function renderTweets (tweets) {
     for (let obj of tweets) {
       let HTMLtweet = createTweetElement(obj)
@@ -68,7 +21,7 @@ $(function(){
     const header = $('<header>');
     header.append(`<img src=${tweetData.user.avatars.small}>`)
     $(`<h1>${tweetData.user.name}</h1>`).addClass("name").appendTo(header);
-    $(`<h2>${tweetData.user.handle}</h2>`).addClass("handle").appendTo(header);
+    $(`<h3>${tweetData.user.handle}</h3>`).addClass("handle").appendTo(header);
 
     //Content div
     const content = $('<div>');
@@ -81,10 +34,13 @@ $(function(){
 
     // Footer
     const footer = $('<footer>');
+    const icon1 = $('<i>').addClass('fa fa-heart SMLink');
+    const icon2 = $('<i>').addClass('fa fa-retweet SMLink');
+    const icon3 = $('<i>').addClass('fa fa-flag SMLink');
     footer.append(`<span>${dayCount}</span>`);
-    footer.append(`<img id="SMLink" src="/images/bird.png">`);
-    footer.append(`<img id="SMLink" src="/images/bird.png">`);
-    footer.append(`<img id="SMLink" src="/images/bird.png">`);
+    footer.append(icon1);
+    footer.append(icon2);
+    footer.append(icon3);
 
     // Connect Parts
     newTweet.prepend(header);
@@ -106,8 +62,8 @@ $(function(){
     } else {
       $.post('/tweets', textarea.serialize()).done(function() {
         // console.log(res);
-        loadTweets();
         $('textarea').val('');
+        loadTweets();
       })
     }
   });
@@ -115,7 +71,10 @@ $(function(){
   $('textarea').on('keypress', () => {
     $('textarea').attr('placeholder', 'What are you humming about?');
     });
-  $('textarea').on('focus', () => {
+  $('body').on('keypress', () => {
+    $('.tooLong').remove();
+  });
+  $('textarea').on('mousemove', () => {
     $('.tooLong').remove();
   });
 

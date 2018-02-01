@@ -1,6 +1,6 @@
-section {
-
+section.new-tweet {
   margin: 1em 2em 1em 2em;
+  display: none;
 }
 
 h2 {
@@ -39,6 +39,7 @@ textarea {
 
 #submit {
   font-size: 0.75em;
+  cursor: pointer;
 }
 
 .counter {

@@ -1,10 +1,9 @@
-section #tweetlist {
-
+section.tweetlist {
   margin: 1em 2em 1em 2em;
 }
 
 article {
-  margin: 15px 0 15px 0;
+  margin: 15px 2em 15px 2em;
   border: 1px solid gray;
   border-radius: 8px;
   padding: 0;
@@ -17,7 +16,7 @@ article:hover {
   opacity: 1;
 }
 
-article:hover #SMLink {
+article:hover i {
   visibility: visible;
 }
 
@@ -44,7 +43,7 @@ article > header > h1 {
   padding: 3px;
 }
 
-article > header > h2 {
+article > header > h3 {
   float: right;
   font-size: xx-small;
   padding: 25px 5px 0 0;
@@ -59,14 +58,11 @@ article > div {
 }
 
 article > div > p {
-  /*max-width: 331px;*/
   font-size: .8em;
   font-weight: lighter;
   display: table-cell;
   vertical-align: middle;
   word-break: break-word;
-/*  word-wrap: break-word;
-  overflow: scroll;*/
 }
 
 article > footer {
@@ -83,10 +79,10 @@ article > footer > span {
   padding: 12px 0 0 10px;
 }
 
-article > footer > img {
+article > footer > i {
   height: 25px;
   width: 25px;
-  margin: 5px 5px 0 0;
+  margin: 9px 5px 0 0;
   float: right;
   visibility: hidden;
 }

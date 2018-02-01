@@ -23,7 +23,6 @@ nav {
   line-height: 2.775em;
   font-size: 1.75em;
   transform: scaleY(1.2);
-
 }
 
 #nav-bar .compose:hover {
@@ -38,4 +37,5 @@ nav {
   border: 1px solid black;
   border-radius: 8px;
   opacity: 0.5;
+  cursor: pointer;
 }
