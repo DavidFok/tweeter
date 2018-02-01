@@ -1,0 +1,87 @@
+section #tweetlist {
+
+  margin: 1em 2em 1em 2em;
+}
+
+article {
+  margin: 15px 0 15px 0;
+  border: 1px solid gray;
+  border-radius: 8px;
+  padding: 0;
+  background-color: white;
+  opacity: 0.5;
+  z-index: 4;
+}
+article:hover {
+  opacity: 1;
+}
+
+article:hover #SMLink {
+  visibility: visible;
+}
+
+article > header {
+  height: 60px;
+  border-radius: 7px 7px 0 0;
+  background-color: rgb(230,230,230);
+  overflow: auto;
+  width: 100%
+  z-index: 2;
+}
+
+article > header > img {
+  float: left;
+  width: 58px;
+  height: 58px;
+  border-radius: 10px;
+  padding: 5px;
+}
+
+article > header > h1 {
+  float: left;
+  margin: 0;
+  font-size: 1.5em;
+  padding: 3px;
+}
+
+article > header > h2 {
+  float: right;
+  font-size: xx-small;
+  padding: 25px 5px 0 0;
+  border: none;
+  font-size: xx-small;
+  font-weight: lighter;
+}
+
+article > div {
+  margin: 20px 15px 20px 15px;
+}
+
+article > div > p {
+  font-size: .8em;
+  font-weight: lighter;
+  display: table-cell;
+  vertical-align: middle;
+}
+
+article > footer {
+  border-top-width: 1px;
+  border-top-color: lightgray;
+  border-top-style: solid;
+  height: 35px;
+}
+
+article > footer > span {
+  font-size: xx-small;
+  font-weight: lighter;
+  float: left;
+  padding: 12px 0 0 10px;
+}
+
+article > footer > img {
+  height: 25px;
+  width: 25px;
+  margin: 5px 5px 0 0;
+  float: right;
+  visibility: hidden;
+}

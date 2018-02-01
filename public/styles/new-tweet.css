@@ -1,0 +1,44 @@
+section {
+
+  margin: 1em 2em 1em 2em;
+}
+
+h2 {
+  /*border-color: lightgray;*/
+  margin: 1em 2em 1em 2em;
+  border: 1px solid gray;
+  border-radius: 8px;
+  padding: 0.5em;
+  margin: 0;
+}
+
+h2 > header {
+  border-bottom-width: 1px;
+  border-bottom-color: black;
+  border-bottom-style: solid;
+  margin-bottom: 15px;
+}
+
+form {
+  padding: 0;
+  margin: 0;
+    font-weight: lighter;
+}
+
+textarea {
+  width: 100%;
+  padding: 5px;
+  font-size: 0.7em;
+  line-height: 1.5em;
+}
+
+[type="submit"] {
+  font-size: 0.6em;
+}
+
+.counter {
+  position: relative;
+  left: 250px;
+  font-size: xx-small;
+  padding-right: 5px;
+}
