@@ -77,7 +77,9 @@ $(function(){
   $('textarea').on('mousemove', () => {
     $('.tooLong').remove();
   });
-
+  $('input').on('click', () => {
+    $('.tooLong').remove();
+  });
 
   function loadTweets () {
     $.get('/tweets').done(renderTweets);

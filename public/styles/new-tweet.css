@@ -33,7 +33,7 @@ textarea {
 }
 
 .tooLong {
-  padding-left: 155px;
+  padding-left: 140px;
   font-size: 0.4em;
 }
 
@@ -45,5 +45,5 @@ textarea {
 .counter {
   float: right;
   font-size: xx-small;
-  padding: 12px 5px 0 0;
+  padding: 14px 5px 0 0;
 }
