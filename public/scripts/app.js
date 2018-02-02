@@ -1,10 +1,3 @@
-/*
- * Client-side JS logic goes here
- * jQuery is already loaded
- * Reminder: Use (and do all your DOM work in) jQuery's document ready function
- */
-
- // Test / driver code (temporary). Eventually will get this from the server.
 $(function(){
 
   function renderTweets (tweets) {
@@ -19,7 +12,7 @@ $(function(){
 
     //Header
     const header = $('<header>');
-    header.append(`<img src=${tweetData.user.avatars.small}>`)
+    header.append(`<img src=${tweetData.user.avatars.small}>`);
     $(`<h1>${tweetData.user.name}</h1>`).addClass("name").appendTo(header);
     $(`<h3>${tweetData.user.handle}</h3>`).addClass("handle").appendTo(header);
 
@@ -27,17 +20,12 @@ $(function(){
     const content = $('<div>');
     $('<p>').text(tweetData.content.text).addClass("content").appendTo(content);
 
-    // Date Calculator
-    const today = new Date();
-    const tweetDate = new Date(tweetData.created_at);
-    const dayCount = `${Math.floor((today - tweetDate) / 1000 / 60 / 60 / 24)} days ago`;
-
     // Footer
     const footer = $('<footer>');
     const icon1 = $('<i>').addClass('fa fa-heart SMLink');
     const icon2 = $('<i>').addClass('fa fa-retweet SMLink');
     const icon3 = $('<i>').addClass('fa fa-flag SMLink');
-    footer.append(`<span>${dayCount}</span>`);
+    footer.append(`<span>${dayCalc(tweetData)}</span>`);
     footer.append(icon1);
     footer.append(icon2);
     footer.append(icon3);
@@ -67,6 +55,7 @@ $(function(){
       })
     }
   });
+
   // reset the <textarea>
   $('textarea').on('keypress', () => {
     $('textarea').attr('placeholder', 'What are you humming about?');
@@ -81,6 +70,7 @@ $(function(){
     $('.tooLong').remove();
   });
 
+
   function loadTweets () {
     $.get('/tweets').done(renderTweets);
   }
@@ -92,38 +82,4 @@ $(function(){
     $('textarea').focus().select()
   });
 });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
