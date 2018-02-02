@@ -11,8 +11,9 @@ const nodeSassMiddleware = require('node-sass-middleware');
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(nodeSassMiddleware({
-  src: path.join(__dirname, 'styles'),
-  dest: path.join(__dirname, 'public'),
+  src: path.join(__dirname, '../styles'),
+  dest: path.join(__dirname, '../public/styles'),
+  prefix: '/styles',
   debug: true,
   outputStyle: 'compressed'
 }));
