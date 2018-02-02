@@ -3,6 +3,9 @@ $(function(){
   const $form = $('form');
   const $textarea = $('textarea');
   const $body = $('body');
+  const $input = $('input');
+  const $button = $('button');
+  const $h2 = $('h2');
 
   function renderTweets (tweets) {
     for (let obj of tweets) {
@@ -69,7 +72,7 @@ $(function(){
   $textarea.on('mousemove', () => {
     $('.tooLong').remove();
   });
-  $('input').on('click', () => {       //???????????
+  $input.on('click', () => {
     $('.tooLong').remove();
   });
 
@@ -80,8 +83,8 @@ $(function(){
   loadTweets();
 
   // Compose button reveal Tweet Form
-  $('button').on('click', () => {         //??????????????
-    $('h2').parent().slideToggle(300);   // ??????????????
+  $button.on('click', () => {
+    $h2.parent().slideToggle(300);
     $textarea.focus().select()
   });
 });
