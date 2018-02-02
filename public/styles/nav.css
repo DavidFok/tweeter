@@ -1,7 +1,7 @@
 nav {
   background-color: #00a087;
   color: #e8fdff;
-  padding: 0px 2em 0px 2em;
+  padding: 0px 1.5em 0px 1.5em;
   position: fixed;
   top: 0px;
   height: 80px;
@@ -31,7 +31,7 @@ nav {
 
 #nav-bar .compose {
   float: right;
-  margin: 15px 5px 0 0;
+  margin: 15px 0 0 0;
   height: 50px;
   width: 100px;
   border: 1px solid black;

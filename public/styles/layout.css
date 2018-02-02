@@ -24,10 +24,10 @@ body {
 }
 
 body > main.container {
-  width: 450px;
+  max-width: 450px;
   background-color: rgba(150,150,150,0.1);
   margin: auto;
-  padding: 80px 2% 50px 2%;
+  padding: 80px 0 20px 0;
 }
 
 

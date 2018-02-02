@@ -33,9 +33,7 @@ $(function(){
     const icon2 = $('<i>').addClass('fa fa-retweet SMLink');
     const icon3 = $('<i>').addClass('fa fa-flag SMLink');
     footer.append(`<span>${dayCalc(tweetData)}</span>`);
-    footer.append(icon1);
-    footer.append(icon2);
-    footer.append(icon3);
+    footer.append(icon1).append(icon2).append(icon3);
 
     // Connect Parts
     newTweet.prepend(header);
@@ -55,7 +53,6 @@ $(function(){
       $textarea.attr('placeholder', 'Write your tweet here');
     } else {
       $.post('/tweets', $textarea.serialize()).done(function() {
-        // console.log(res);
         $textarea.val('');
         loadTweets();
       })
