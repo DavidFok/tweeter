@@ -1,9 +1,12 @@
 $(function(){
+  const $tweetContainer = $('#tweet-container');
+  const $form = $('form');
+  const $textarea = $('textarea');
 
   function renderTweets (tweets) {
     for (let obj of tweets) {
       let HTMLtweet = createTweetElement(obj)
-      $('#tweet-container').prepend(HTMLtweet);
+      $tweetContainer.prepend(HTMLtweet);
     }
   }
 
@@ -38,32 +41,31 @@ $(function(){
   }
 
   // Ajax Management of Tweet post
-  $('form').on('submit', function (event) {
+  $form.on('submit', function (event) {
     event.preventDefault();
-    const textarea = $('textarea');
-    if (textarea.val().length > 140) {
+    if ($textarea.val().length > 140) {
       const tooLong = $('<span>').text('Your tweet is too long!').addClass('tooLong');
       $('section').first().effect("shake");
       $('input').after(tooLong);
-    } else if (textarea.val() === "") {
-      textarea.attr('placeholder', 'Write your tweet here');
+    } else if ($textarea.val() === "") {
+      $textarea.attr('placeholder', 'Write your tweet here');
     } else {
-      $.post('/tweets', textarea.serialize()).done(function() {
+      $.post('/tweets', $textarea.serialize()).done(function() {
         // console.log(res);
-        $('textarea').val('');
+        $textarea.val('');
         loadTweets();
       })
     }
   });
 
   // reset the <textarea>
-  $('textarea').on('keypress', () => {
-    $('textarea').attr('placeholder', 'What are you humming about?');
+  $textarea.on('keypress', () => {
+    $textarea.attr('placeholder', 'What are you humming about?');
     });
   $('body').on('keypress', () => {
     $('.tooLong').remove();
   });
-  $('textarea').on('mousemove', () => {
+  $textarea.on('mousemove', () => {
     $('.tooLong').remove();
   });
   $('input').on('click', () => {
@@ -79,7 +81,7 @@ $(function(){
   // Compose button reveal Tweet Form
   $('button').on('click', () => {
     $('h2').parent().slideToggle(300);
-    $('textarea').focus().select()
+    $textarea.focus().select()
   });
 });
 

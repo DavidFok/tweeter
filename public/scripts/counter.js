@@ -6,7 +6,7 @@ function dayCalc (tweetData) {
   // If less than a minute ago
   if (diffCount < 60000) {
     const secCount = Math.floor(diffCount / 1000);
-    const counter = `${diffCount} seconds ago`;
+    const counter = `${secCount} seconds ago`;
     return counter;
   // If less than an hour ago
   } else if (diffCount < 3600000) {
