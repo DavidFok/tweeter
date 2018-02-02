@@ -1,0 +1,189 @@
+section.tweetlist {
+  margin: 1em 2em 1em 2em; }
+
+article {
+  margin: 15px 2em 15px 2em;
+  border: 1px solid gray;
+  border-radius: 8px;
+  padding: 0;
+  background-color: white;
+  opacity: 0.5;
+  z-index: 4;
+  height: auto; }
+
+article:hover {
+  opacity: 1; }
+
+article:hover i {
+  visibility: visible; }
+
+article > header {
+  height: 60px;
+  border-radius: 7px 7px 0 0;
+  background-color: #e6e6e6;
+  width: 100%;
+  z-index: 2; }
+
+article > header > img {
+  float: left;
+  width: 58px;
+  height: 58px;
+  border-radius: 10px;
+  padding: 5px; }
+
+article > header > h1 {
+  float: left;
+  margin: 0;
+  font-size: 1.5em;
+  padding: 3px; }
+
+article > header > h3 {
+  float: right;
+  font-size: xx-small;
+  padding: 17px 8px 0 0;
+  border: none;
+  font-size: xx-small;
+  font-weight: lighter; }
+
+article > div {
+  margin: 20px 15px 20px 15px;
+  height: auto; }
+
+article > div > p {
+  font-size: .8em;
+  font-weight: lighter;
+  display: table-cell;
+  vertical-align: middle;
+  word-break: break-word; }
+
+article > footer {
+  border-top-width: 1px;
+  border-top-color: lightgray;
+  border-top-style: solid;
+  height: 35px; }
+
+article > footer > span {
+  font-size: xx-small;
+  font-weight: lighter;
+  float: left;
+  padding: 12px 0 0 10px; }
+
+article > footer > i {
+  height: 25px;
+  width: 25px;
+  margin: 9px 5px 0 0;
+  float: right;
+  visibility: hidden; }
+
+/*
+ * http://www.paulirish.com/2012/box-sizing-border-box-ftw/
+ * https://css-tricks.com/international-box-sizing-awareness-day/
+ * Do not modify these two selectors, please
+ */
+html {
+  box-sizing: border-box; }
+
+*, *:before, *:after {
+  box-sizing: inherit; }
+
+/*
+ * Global layout stuff
+ */
+html {
+  font-family: 'Roboto', sans-serif; }
+
+body {
+  margin: 0;
+  color: #244751;
+  background-color: #eee;
+  font-weight: lighter; }
+
+body > main.container {
+  max-width: 450px;
+  background-color: rgba(150, 150, 150, 0.1);
+  margin: auto;
+  padding: 80px 0 20px 0; }
+
+/*
+ * Additional CSS can be defined below or in other CSS files, as per instructions
+ */
+nav {
+  background-color: #00a087;
+  color: #e8fdff;
+  padding: 0px 1.5em 0px 1.5em;
+  position: fixed;
+  top: 0px;
+  height: 80px;
+  width: 100%;
+  z-index: 4;
+  overflow: auto;
+  font-weight: lighter; }
+
+#nav-bar .logo {
+  float: left;
+  width: 80px;
+  height: 80px; }
+
+#nav-bar .header {
+  float: left;
+  padding-left: 10px;
+  line-height: 2.775em;
+  font-size: 1.75em;
+  transform: scaleY(1.2); }
+
+#nav-bar .compose:hover {
+  opacity: 0.88; }
+
+#nav-bar .compose {
+  float: right;
+  margin: 15px 0 0 0;
+  height: 50px;
+  width: 100px;
+  border: 1px solid black;
+  border-radius: 8px;
+  opacity: 0.5;
+  cursor: pointer; }
+
+section.new-tweet {
+  margin: 1em 2em 1em 2em;
+  display: none; }
+
+h2 {
+  /*border-color: lightgray;*/
+  margin: 1em 2em 1em 2em;
+  border: 1px solid gray;
+  border-radius: 8px;
+  padding: 0.5em;
+  margin: 0; }
+
+h2 > header {
+  border-bottom-width: 1px;
+  border-bottom-color: black;
+  border-bottom-style: solid;
+  margin-bottom: 15px; }
+
+form {
+  padding: 0;
+  margin: 0;
+  font-weight: lighter; }
+
+textarea {
+  width: 100%;
+  padding: 5px;
+  font-size: 0.7em;
+  line-height: 1.5em; }
+
+.tooLong {
+  padding-left: 140px;
+  font-size: 0.4em; }
+
+#submit {
+  font-size: 0.75em;
+  cursor: pointer; }
+
+.counter {
+  float: right;
+  font-size: xx-small;
+  padding: 14px 5px 0 0; }
+
+/*# sourceMappingURL=styles.css.map */
