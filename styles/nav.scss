@@ -1,0 +1,43 @@
+nav {
+  background-color: #00a087;
+  color: #e8fdff;
+  padding: 0px 1.5em 0px 1.5em;
+  position: fixed;
+  top: 0px;
+  height: 80px;
+  width: 100%;
+  z-index: 4;
+  overflow: auto;
+  font-weight: lighter;
+}
+
+#nav-bar {
+  .logo {
+    float: left;
+    width: 80px;
+    height: 80px;
+  }
+
+  .header {
+    float: left;
+    padding-left: 10px;
+    line-height: 2.775em;
+    font-size: 1.75em;
+    transform: scaleY(1.2);
+  }
+
+  .compose:hover {
+    opacity: 0.88;
+  }
+
+  .compose {
+    float: right;
+    margin: 15px 0 0 0;
+    height: 50px;
+    width: 100px;
+    border: 1px solid black;
+    border-radius: 8px;
+    opacity: 0.5;
+    cursor: pointer;
+  }
+}
