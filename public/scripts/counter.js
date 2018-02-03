@@ -22,11 +22,14 @@ function dayCalc (tweetData) {
     return `${minCount} minutes ago`;
   // less than 2 hours ago
   } else if (diffCount < (timesConv.hour * 2)) {
-    return '1 hour ago';
+    return 'an hour ago';
   // less than a day
   } else if (diffCount < timesConv.day) {
     const hourCount = Math.floor(diffCount / timesConv.hour);
     return `${hourCount} hours ago`;
+  // less than 2 days
+  } else if (diffCount < (timesConv.day * 2)) {
+      return 'A day ago';
   // less than a month
   } else if (diffCount < timesConv.month) {
     const dayCount = Math.floor(diffCount / timesConv.day);
