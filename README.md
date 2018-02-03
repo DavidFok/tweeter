@@ -2,7 +2,11 @@
 
 Tweeter is a simple, single-page Twitter clone.
 
-This repository is the starter code for the project: Students will fork and clone this repository, then build upon it to practice their HTML, CSS, JS, jQuery and AJAX front-end skills, and their Node, Express and MongoDB back-end skills.
+Built to develop upon front-end skills using HTML, CSS, JS, jQuery and AJAX, and back-end skills using Node, Express and MongoDB.
+
+## Final Product
+
+A simple single-page application that allows users to post tweets onto the page. Posted tweets, unlike my TinyApp are saved in a persistent on-disk database via MongoDB. Focusing more on the front-end aspect of web development, Tweeter has several interactive features such as sliding tweet form, character counter, and warnings when users do not input tweets within the required parameters. Tweets and buttons are resposive to mouse hovers and change change appearance upon interaction. Also displayed is a tweetpost-time counter in the footer of every tweet.
 
 ## Getting Started
 
@@ -15,3 +19,17 @@ This repository is the starter code for the project: Students will fork and clon
 
 - Express
 - Node 5.10.x or above
+- Body-parser
+- Chance
+- MongoDB
+- Node Sass Middleware
+
+## Notes
+
+Some extra features are added to my app as listed below:
+
+1. The compose component of tweeter shakes and displays a warning in-line when a user inputs too many characters rather than an alert.
+
+2. The placeholder within the textarea changes to inform the user when they they submit an empty tweet rather than an alert.
+
+3. Title icon added and shown in the tab bar.
